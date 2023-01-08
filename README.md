@@ -3,5 +3,5 @@
 Available at https://nxy7.github.io
 
 ## Built with NextJS
-- build files are located at /www/server/pages
+- builds with github actions and deploys on gh-pages branch
 - built by using NextJS SSG
