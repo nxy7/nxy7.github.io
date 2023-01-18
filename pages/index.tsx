@@ -20,7 +20,7 @@ export default function Home() {
         <Slide style={{ backgroundImage: "url(slidebg.svg)", backgroundSize: "cover" }}>
           <div className="w-full grow grid grid-cols-2 items-center place-items-center">
             <div className="text-white">
-              1
+              2
             </div>
             <div></div>
           </div>
