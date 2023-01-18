@@ -1,74 +1,71 @@
 import Head from "next/head";
+import Header from "../components/Header";
+import Slide from "../components/Slide";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>Dawid Danieluk Portfolio Website</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      {/* header visible when scrolling down */}
+      <Header></Header>
 
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
+      <main className="relative w-screen h-screen snap-y snap-mandatory overflow-y-auto">
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+        <Slide style={{ backgroundImage: "url(slidebg.svg)", backgroundSize: "cover" }}>
+          <div className="w-full grow grid grid-cols-2 items-center place-items-center">
+            <div className="text-white">
+              1
+            </div>
+            <div></div>
+          </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+          {/*
+          <div className="flex space-x-40 mt-auto mb-20">
+            <FrontButton href="#techstack">Tech Stack</FrontButton>
+            <FrontButton href="#projects">My Projects</FrontButton>
+            <FrontButton href="/blog">Blog</FrontButton>
+          </div>
+          */}
+          <BlurredBG />
+        </Slide>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        {/* Tech Stack */}
+        <Slide id="techstack" style={{ backgroundImage: "url(slidebg2.svg)", backgroundSize: "cover" }}>
+          Techstack
+          <BlurredBG />
+        </Slide>
+
+        {/* Projects */}
+        <Slide id="projects" style={{ backgroundImage: "url(slidebg.svg)", backgroundSize: "cover" }}>Projects</Slide>
+
+        {/*<footer>Footer</footer> */}
       </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
-
       <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+        /* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #222222; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffffff; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
         footer {
           width: 100%;
           height: 100px;
@@ -90,7 +87,6 @@ export default function Home() {
         code {
           background: #fafafa;
           border-radius: 5px;
-          padding: 0.75rem;
           font-size: 1.1rem;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
@@ -99,8 +95,10 @@ export default function Home() {
 
       <style jsx global>{`
         html,
-        body {
+        body, main, #__next{
+          scroll-behavior: smooth;
           padding: 0;
+          overflow-x: hidden;
           margin: 0;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
@@ -110,6 +108,29 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
+    </>
   );
+}
+
+type FrontButtonProps = {
+  href: string
+  children: any
+}
+export function FrontButton(props: FrontButtonProps) {
+  if (props.href) return (
+    <a href={props.href} className={
+      `px-8 py-3 border-2 border-white rounded-sm duration-200`
+      + ` hover:bg-[#FFFFFF19]`
+      + ` font-bold text-white`
+    }>{props.children}</a>
+  )
+  return (
+    <button>{props.children}</button>
+  )
+}
+
+export function BlurredBG() {
+  return (
+    <div className="absolute w-full h-20 -bottom-10 z-50 backdrop-blur-xl" />
+  )
 }
