@@ -11,7 +11,7 @@ if (isGithubActions || process.env.NODE_ENV != "development") {
 
   assetPrefix = `./`;
   // basePath = `/${repo}`;
-  basePath = `/`;
+  basePath = ``;
 }
 
 /**
@@ -25,9 +25,9 @@ const nextConfig = {
   webpack: (config, context) => {
     config.plugins.push(UnoCSS());
 
-    config.optimization = {
-      realContentHash: true,
-    }
+    // config.optimization = {
+      // realContentHash: true,
+    // }
 
 
     // if (context.buildId !== "development") {

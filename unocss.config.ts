@@ -1,13 +1,12 @@
-import { defineConfig, presetAttributify, presetMini, presetUno, presetWind } from 'unocss';
+import { defineConfig, presetAttributify, presetUno } from 'unocss';
 import transformerVariantGroups from '@unocss/transformer-variant-group'
 
 export default defineConfig({
 	presets: [
-		presetMini(),
 		presetUno(),
-		presetWind(),
 		presetAttributify()
 	],
+
 	transformers: [
 		transformerVariantGroups()
 	],
