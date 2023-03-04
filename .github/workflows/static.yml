@@ -30,27 +30,24 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          # update the Node version to meet your needs
           node-version: 16
-          cache: pnpm
 
       - uses: pnpm/action-setup@v2
         with:
           version: latest
       
 
-      - name: Build
-        run: |
+      - run: |
           pnpm ci
           pnpm run build
           pnpm run export
           touch out/.nojekyll
           # configure the build here
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4 
+      - uses: JamesIves/github-pages-deploy-action@v4 
         with:
           branch: gh-pages
           folder: out
