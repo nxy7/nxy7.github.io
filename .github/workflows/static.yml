@@ -36,10 +36,12 @@ jobs:
           node-version: 16
           cache: pnpm
 
-      - name: Build
-        uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v2
         with:
           version: latest
+      
+
+      - name: Build
         run: |
           pnpm ci
           pnpm run build
