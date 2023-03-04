@@ -41,7 +41,7 @@ jobs:
       
 
       - run: |
-          pnpm ci
+          pnpm install
           pnpm run build
           pnpm run export
           touch out/.nojekyll
