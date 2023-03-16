@@ -23,8 +23,7 @@ export default function Slide(props: SlideProps) {
 
 	return (
 		<div ref={ref} id={props.id} className={
-			`relative flex flex-col snap-center p-20 w-full h-screen items-center `
-			+ (isVisible ? `!bg-red-200` : ``)
+			`snap-center w-full h-screen `
 		} style={props.style} >
 			{props.children}
 		</div >
