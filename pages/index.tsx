@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Children, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
 	const [activeSlide, setActiveSlide] = useState(0)
@@ -144,7 +145,7 @@ const ProjectsSection = ({ children, isVisibleCallback }: { children?, isVisible
 
 	return <>
 		<section style={{
-			clipPath: `url(frame.svg#mask)`
+			// clipPath: `url(frame.svg#mask)`
 		}} className="h-screen border-2 border-black relative snap-center overflow-hidden">
 			<div className="grid grid-cols-5 h-full">
 				<div className="col-span-3">
@@ -198,12 +199,10 @@ const Navigation = () => {
 }
 
 const HeadSection = ({ isVisibleCallback }: { isVisibleCallback: () => void }) => {
-	return <section id="main" style={{
-		padding: "0.5rem"
-	}} >
+	return <section id="main" className="h-screen">
 		<Navigation></Navigation>
-		<div className="w-full grow grid md:(grid-cols-2) items-center place-items-center">
-			<div className="text-white w-96 relative">
+		<div className="w-full overflow-hidden grow grid md:(grid-cols-2) items-center place-items-center">
+			<div className="text-white w-96 relative text-lg">
 				<h1 className="font-bold italic text-5xl order-2 md:(order-1)">whoami</h1>
 				<div className="mt-3 space-y-3">
 					<div>
@@ -211,13 +210,11 @@ const HeadSection = ({ isVisibleCallback }: { isVisibleCallback: () => void }) =
 						type safe languages/tech stacks, reproducible environments (nix) and test critical parts of my software.
 					</div>
 					<button
-						style={{
-
-						}}
 						onClick={() => {
 							console.log("z")
 						}}
-						className="bg-[#FFFFFF22] duration-200 text-white text-semibold rounded-sm border-0 p-3 border-white hover:(bg-[#FFFFFF55]) cursor-pointer">Read more</button>
+						className={`${styles.neonButton} bg-[#FFFFFF22] duration-200 text-white text-semibold rounded-sm border-0 text-xl py-4 px-7 border-white hover:(bg-[#FFFFFF55]) cursor-pointer`}>Read more</button>
+
 				</div>
 			</div>
 			<div className="w-full h-full overflow-hidden">
