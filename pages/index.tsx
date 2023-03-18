@@ -1,8 +1,6 @@
 import Head from "next/head";
 import { Children, useState } from "react";
-import Header from "../components/Header";
-import Slide from "../components/Slide";
-import styles from "../styles/Home.module.css";
+import ProjectCard from "../components/ProjectCard";
 
 export default function Home() {
 	const [activeSlide, setActiveSlide] = useState(0)
@@ -15,32 +13,32 @@ export default function Home() {
 			</Head>
 
 			{/* header visible when scrolling down */}
-			<Header activeEl={activeSlide}></Header>
+			{/* <Header activeEl={activeSlide}></Header> */}
 
-			<main className="relative bg-slate-900 text-white w-screen h-screen snap-y snap-mandatory overflow-y-auto">
+			<main className="bg-primary text-white">
 
-				<HeadSlide isVisibleCallback={() => {
+				<HeadSection isVisibleCallback={() => {
 					setActiveSlide(0)
-				}}></HeadSlide>
+				}}></HeadSection>
 
-				{/* Tech Stack */}
-				<TechStackSlide isVisibleCallback={() => {
-					setActiveSlide(1)
-				}}></TechStackSlide>
+				<div className="flex flex-col gap-10 snap-proximity snap-y">
+					<TechStackSection isVisibleCallback={() => {
+						setActiveSlide(1)
+					}}></TechStackSection>
 
-				{/* Projects */}
+					<ProjectsSection isVisibleCallback={() => {
+						setActiveSlide(2)
+					}}>
+						<div>test1</div>
+						<div>test2</div>
+						<div>test3</div>
+						<div>test4</div>
 
-				<ProjectsSlide isVisibleCallback={() => {
-					setActiveSlide(2)
-				}}>
-					<ChildrenCount>
-						<div>test</div>
-						<div>test</div>
-						<div>test</div>
-						<div>test</div>
-					</ChildrenCount>
+					</ProjectsSection>
+					<ContactSection></ContactSection>
+				</div>
+				<Footer></Footer>
 
-				</ProjectsSlide>
 
 
 				{/*<footer>Footer</footer> */}
@@ -111,58 +109,119 @@ export default function Home() {
 	);
 }
 
-const ChildrenCount = ({ children }) => {
+
+const TechStackSection = ({ children, isVisibleCallback }: { children?, isVisibleCallback: () => void }) => {
 	const count = Children.count(children)
-	return <div>
-		{children.map(e => <div>ga{e}ga</div>)}
-	</div>
+	return <>
+		<section className="w-full px-32">
+			<h2 className="text-5xl mb-10">Technologies I Use</h2>
+			<div className="flex space-x-5">
+				{/* logos */}
+
+				{["Typescript_logo_2020.svg", "Go-Logo_Blue.svg", "rust_logo.svg", "docker-svgrepo-com.svg", "nix_logo.svg"].map((e, ind) =>
+					<img key={ind} className="object-scale-down h-16" src={e} />
+				)}
+			</div>
+
+		</section>
+	</>
 }
 
-const TechStackSlide = ({ isVisibleCallback }: { isVisibleCallback: () => void }) => {
-	return <Slide id="techstack" style={{
-		display: "flex",
-		justifyContent: "center",
-		alignItems: "center"
-	}} isVisibleCallback={isVisibleCallback}>
-
-		<div className="m-auto">
-			technology showcases
-		</div>
-
-	</Slide>
+type Project = {
+	backgroundImg?: string
+	title?: string
+	liveLink?: string
+	sourceCode?: string
+	technologies: string[]
 }
-const ProjectsSlide = ({ children, isVisibleCallback }: { children, isVisibleCallback: () => void }) => {
-	const count = Children.count(children)
-	return <Slide id="projects" style={{
-		display: "flex",
-		justifyContent: "center",
-		alignItems: "center"
-	}} isVisibleCallback={isVisibleCallback}>
-		<div className="">Project showcase</div>
-	</Slide>
-}
-const HeadSlide = ({ isVisibleCallback }: { isVisibleCallback: () => void }) => {
-	return <Slide id="main" style={{
-		padding: "0.5rem"
-	}} isVisibleCallback={isVisibleCallback}>
-		<div className="w-full h-full grow grid grid-cols-2 items-center place-items-center">
-			<div className="text-white w-96">
+const ProjectsSection = ({ children, isVisibleCallback }: { children?, isVisibleCallback: () => void }) => {
+	const projects: Project[] = [
+		{ title: "Mediujemy", technologies: [], backgroundImg: "mediujemy.png" },
+		{ title: "StockBuddy", technologies: [], backgroundImg: "mediujemy.png" },
+		{ title: "Streampai", technologies: [], backgroundImg: "mediujemy.png" },
+	]
+	const [selectedProject, setSelectedProject] = useState(0)
 
-				<div className="font-bold italic text-4xl hover:(text-red-300 font-bold)">whoami</div>
-				<div className="mb-10">
-					Developer passionate about new technologies. I value reliable software, so I tend to gravitate towards
-					type safe languages/tech stacks, reproducible environments (nix) and test critical parts of my software.
+	return <>
+		<section style={{
+			clipPath: `url(frame.svg#mask)`
+		}} className="h-screen border-2 border-black relative snap-center overflow-hidden">
+			<div className="grid grid-cols-5 h-full">
+				<div className="col-span-3">
+					<h2 className="text-5xl mb-10">Projects</h2>
+					project selection and details
 				</div>
-				<div className="flex space-x-5">
-					{/* logos */}
+				<div style={{
+					backgroundImage: `url(${projects[selectedProject].backgroundImg})`,
+					backgroundPosition: `center`,
+					backgroundSize: `fit`,
+					clipPath: `ellipse(100% 150% at right)`
+				}} className="col-span-2 h-full w-full">
 
-					{["Typescript_logo_2020.svg", "golang_mascot.png", "rust_mascot.png", "docker_logo.webp", "nix_logo.svg"].map((e, ind) =>
-						<img key={ind} className="object-scale-down h-16 " src={e} />
-					)}
+				</div>
+
+			</div>
+		</section>
+	</>
+}
+const ContactSection = ({ children }: { children?}) => {
+	return <>
+		<section>
+			<h2 className="text-5xl">Contact</h2>
+			<div>
+				email?
+			</div>
+
+		</section>
+	</>
+}
+const Footer = ({ children }: { children?}) => {
+	return <>
+		<section>
+			Footer
+		</section>
+	</>
+}
+
+const Navigation = () => {
+	return <>
+		<div className="md:absolute m-20 text-lg">
+			<ul className="flex gap-8 font-semibold">
+				<li><a href="#about">About Me</a></li>
+				<li><a href="#techstack">Tech Stack</a></li>
+				<li><a href="#projects">My Projects</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="/blog">Blog</a></li>
+			</ul>
+		</div>
+	</>
+}
+
+const HeadSection = ({ isVisibleCallback }: { isVisibleCallback: () => void }) => {
+	return <section id="main" style={{
+		padding: "0.5rem"
+	}} >
+		<Navigation></Navigation>
+		<div className="w-full grow grid md:(grid-cols-2) items-center place-items-center">
+			<div className="text-white w-96 relative">
+				<h1 className="font-bold italic text-5xl order-2 md:(order-1)">whoami</h1>
+				<div className="mt-3 space-y-3">
+					<div>
+						Developer passionate about new technologies. I value reliable software, so I tend to gravitate towards
+						type safe languages/tech stacks, reproducible environments (nix) and test critical parts of my software.
+					</div>
+					<button
+						style={{
+
+						}}
+						onClick={() => {
+							console.log("z")
+						}}
+						className="bg-[#FFFFFF22] duration-200 text-white text-semibold rounded-sm border-0 p-3 border-white hover:(bg-[#FFFFFF55]) cursor-pointer">Read more</button>
 				</div>
 			</div>
 			<div className="w-full h-full overflow-hidden">
-				<img className="ratio-square h-full w-full object-cover" src="https://www.sciencenews.org/wp-content/uploads/2022/11/Hubble-Pillars-of-Creation.jpg" />
+				<img className="ratio-square md:h-full object-fit p-20" src="undraw_feeling_proud.svg" />
 			</div>
 		</div>
 
@@ -174,7 +233,7 @@ const HeadSlide = ({ isVisibleCallback }: { isVisibleCallback: () => void }) => 
           </div>
           */}
 		{/* <BlurredBG />*/}
-	</Slide>
+	</section>
 }
 
 type FrontButtonProps = {

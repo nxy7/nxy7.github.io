@@ -13,8 +13,9 @@ export default defineConfig({
 	theme: {
 		// ...
 		colors: {
-			'primary': '#0000ff', // class="text-very-cool"
-			'secondary': "#000000"
+			'primary': '#114B5F', // class="text-very-cool"
+			'secondary': "#F45B69",
+			'bgDark': '#37123C'
 		},
 	}
 });
