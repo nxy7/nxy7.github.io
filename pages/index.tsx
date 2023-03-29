@@ -16,7 +16,7 @@ export default function Home() {
 			{/* header visible when scrolling down */}
 			{/* <Header activeEl={activeSlide}></Header> */}
 
-			<main className="bg-primary text-white">
+			<main className="bg-[#114B5F] text-white">
 
 				<HeadSection isVisibleCallback={() => {
 					setActiveSlide(0)
@@ -114,13 +114,13 @@ export default function Home() {
 const TechStackSection = ({ children, isVisibleCallback }: { children?, isVisibleCallback: () => void }) => {
 	const count = Children.count(children)
 	return <>
-		<section className="w-full px-32">
+		<section id="techstack" className="w-full px-32">
 			<h2 className="text-5xl mb-10">Technologies I Use</h2>
 			<div className="flex space-x-5">
 				{/* logos */}
 
 				{["Typescript_logo_2020.svg", "Go-Logo_Blue.svg", "rust_logo.svg", "docker-svgrepo-com.svg", "nix_logo.svg"].map((e, ind) =>
-					<img key={ind} className="object-scale-down h-16" src={e} />
+					<img key={ind} className="object-scale-down h-16 stroke-red" src={e} />
 				)}
 			</div>
 
@@ -145,7 +145,8 @@ const ProjectsSection = ({ children, isVisibleCallback }: { children?, isVisible
 
 	return <>
 		<section style={{
-			// clipPath: `url(frame.svg#mask)`
+			// clipPath: `url(frame.svg#mask)`,
+			// backgroundColor: "hsl(195, 76%, 8%)"
 		}} className="h-screen border-2 border-black relative snap-center overflow-hidden">
 			<div className="grid grid-cols-5 h-full">
 				<div className="col-span-3">
@@ -186,7 +187,7 @@ const Footer = ({ children }: { children?}) => {
 
 const Navigation = () => {
 	return <>
-		<div className="md:absolute m-20 text-lg">
+		<div className="md:absolute m-6 md:(m-15 place-self-start) place-self-center text-lg">
 			<ul className="flex gap-8 font-semibold">
 				<li><a href="#about">About Me</a></li>
 				<li><a href="#techstack">Tech Stack</a></li>
@@ -199,26 +200,40 @@ const Navigation = () => {
 }
 
 const HeadSection = ({ isVisibleCallback }: { isVisibleCallback: () => void }) => {
-	return <section id="main" className="h-screen">
+	return <section id="main" className="md:min-h-screen grid place-items-center">
 		<Navigation></Navigation>
-		<div className="w-full overflow-hidden grow grid md:(grid-cols-2) items-center place-items-center">
-			<div className="text-white w-96 relative text-lg">
-				<h1 className="font-bold italic text-5xl order-2 md:(order-1)">whoami</h1>
+		<div className="w-full h-full overflow-hidden grow grid md:(grid-cols-2) items-center place-items-center">
+			<div className="w-120 text-white relative text-lg order-2 md:order-0">
+				<h1 className="font-bold italic text-5xl">whoami</h1>
 				<div className="mt-3 space-y-3">
 					<div>
 						Developer passionate about new technologies. I value reliable software, so I tend to gravitate towards
 						type safe languages/tech stacks, reproducible environments (nix) and test critical parts of my software.
 					</div>
-					<button
-						onClick={() => {
-							console.log("z")
-						}}
-						className={`${styles.neonButton} bg-[#FFFFFF22] duration-200 text-white text-semibold rounded-sm border-0 text-xl py-4 px-7 border-white hover:(bg-[#FFFFFF55]) cursor-pointer`}>Read more</button>
+					<div className="flex gap-4">
 
+						<a
+							href="#techstack"
+							onClick={() => {
+								console.log("z")
+							}}
+							className={`${styles.neonButton} flex items-center font-bold bg-[#FFFFFF22] duration-200 text-white rounded-sm border-0 text-xl py-4 px-7 border-white hover:(bg-[#FFFFFF55]) cursor-pointer`}>
+							Read More
+						</a>
+						<a
+							href="https://github.com/nxy7"
+							target="_blank"
+							onClick={() => {
+								console.log("z")
+							}}
+							className={`${styles.neonButton} flex items-center font-bold bg-[#FFFFFF22] duration-200 text-white rounded-sm border-0 text-xl py-4 px-7 border-white hover:(bg-[#FFFFFF55]) cursor-pointer`}>
+							My GitHub <img src="github_logo.svg" alt="github icon" className="ml-3 h-8 w-8 " />
+						</a>
+					</div>
 				</div>
 			</div>
-			<div className="w-full h-full overflow-hidden">
-				<img className="ratio-square md:h-full object-fit p-20" src="undraw_feeling_proud.svg" />
+			<div className="grid place-items-center overflow-hidden pr-5">
+				<img className="w-3/4 h-3/4 md:(h-full w-full) object-fit" src="undraw_feeling_proud.svg" />
 			</div>
 		</div>
 
