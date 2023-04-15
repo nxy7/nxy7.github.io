@@ -11,6 +11,7 @@ export const HeadSection = ({ isVisibleCallback }: { isVisibleCallback: () => vo
                     <div>
                         Developer passionate about new technologies. I value reliable software, so I tend to gravitate towards
                         type safe languages/tech stacks, reproducible environments (nix) and test critical parts of my software.
+                        I'll be honest though, I'm not 'design guy' so don't judge my creations just by the way they look 🤣
                     </div>
                     <div className="flex gap-4">
 

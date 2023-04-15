@@ -4,8 +4,8 @@ import ProjectCard from "../components/ProjectCard";
 import { HeadSection } from "../components/HeaderSection";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
-import { TechStackSection } from "../components/TechStackSection";
-import { ProjectsSection } from "../components/ProjectSection";
+import { TechStackSection } from "../components/TechnologySection/TechStackSection";
+import { ProjectsSection } from "../components/ProjectSection/ProjectSection";
 
 export default function Home() {
 	const [activeSlide, setActiveSlide] = useState(0)
