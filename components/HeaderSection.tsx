@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 
 export const HeadSection = ({ isVisibleCallback }: { isVisibleCallback: () => void }) => {
     return <section id="main" className="md:min-h-screen grid place-items-center">
-        <Navigation></Navigation>
+        {/* <Navigation></Navigation> */}
         <div className="w-full h-full overflow-hidden grow grid md:(grid-cols-2 px-40) items-center place-items-center">
             <div className="w-120 text-white relative text-lg order-2 md:order-0">
                 <h1 className="font-bold italic text-5xl">whoami</h1>

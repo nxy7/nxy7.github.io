@@ -30,7 +30,7 @@ export const ProjectsSection = ({ children, isVisibleCallback }: { children?, is
             </div>
 
             <div style={{
-            }} className="h-full w-full flex flex-col items-center">
+            }} className="h-full w-full flex flex-col items-center mt-6">
                 <ProjectShowcase project={projects[selectedProject]}></ProjectShowcase>
             </div>
         </section>

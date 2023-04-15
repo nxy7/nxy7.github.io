@@ -1,3 +1,5 @@
+import { Technology } from "../TechnologySection/technology"
+
 export type Project = {
     backgroundImg?: string
     title?: string
@@ -5,6 +7,6 @@ export type Project = {
     sourceCode?: string
     description?: string
     imageGallery?: string[]
-    technologies: string[]
+    technologies: Technology[]
 }
 
