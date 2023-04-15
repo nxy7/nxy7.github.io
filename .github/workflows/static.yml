@@ -41,7 +41,7 @@ jobs:
       
 
       - run: |
-          pnpm install
+          pnpm install --no-frozen-lockfile
           pnpm run build
           pnpm run export
           touch out/.nojekyll
