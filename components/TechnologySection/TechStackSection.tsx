@@ -5,8 +5,8 @@ export const TechStackSection = ({ children, isVisibleCallback }: { children?, i
     const count = Children.count(children)
     return <>
         <section id="techstack" className="w-full py-10 flex flex-col items-center">
-            <h2 className="text-5xl mb-10">Technologies I've Used</h2>
-            <div className="flex gap-5 flex-wrap justify-center">
+            <h2 className="text-5xl mb-10 text-center">Technologies I've Used</h2>
+            <div className="flex gap-5 flex-wrap justify-center px-3">
                 {/* logos */}
 
                 {Array.from(technologies.values()).map((e, ind) =>

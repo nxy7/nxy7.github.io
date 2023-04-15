@@ -12,7 +12,7 @@ export const ProjectsSection = ({ children, isVisibleCallback }: { children?, is
 
             <h2 className="text-5xl mb-10">My Projects</h2>
             <div>
-                <div className="flex space-x-4">
+                <div className="flex space-x-4 flex-wrap justify-center">
                     {projects.map((project, index) => {
                         return <button key={index} onClick={() => {
                             setSelectedProject(index)

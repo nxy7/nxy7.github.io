@@ -4,8 +4,8 @@ import { Children } from 'react'
 export default function ProjectShowcase({ project }: { project: Project }) {
 
     return <>
-        <div className="flex flex-col items-center w-fit">
-            <div className="w-120 lg:w-180 space-y-4">
+        <div className="flex flex-col w-full items-center w-fit">
+            <div className="px-2 max-w-120 lg:max-w-180 space-y-4">
                 <div>
                     <div className="font-semibold mb-1">
                         Project description:
@@ -28,7 +28,7 @@ export default function ProjectShowcase({ project }: { project: Project }) {
 
                 </div>
             </div>
-            <div className="group mt-7 grid place-items-center relative w-140 rounded-md aspect-video overflow-hidden">
+            <div className="group mt-7 grid place-items-center relative w-full md:max-w-140 rounded-md aspect-video overflow-hidden">
                 <div className="flex flex-col space-y-4 z-10 opacity-0 duration-350 group-hover:(opacity-100)">
                     {project.liveLink && <NavigationButton link={project.liveLink}>
                         watch live

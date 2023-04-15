@@ -2,10 +2,10 @@ import { Navigation } from "./Navigation"
 import styles from '../styles/Home.module.css'
 
 export const HeadSection = ({ isVisibleCallback }: { isVisibleCallback: () => void }) => {
-    return <section id="main" className="md:min-h-screen grid place-items-center">
+    return <section id="main" className="grid place-items-center">
         {/* <Navigation></Navigation> */}
-        <div className="w-full h-full overflow-hidden grow grid md:(grid-cols-2 px-40) items-center place-items-center">
-            <div className="w-120 text-white relative text-lg order-2 md:order-0">
+        <div className="w-full min-h-screen grid gap-7 p-3 lg:(grid-cols-2) place-items-center">
+            <div className="max-w-140 text-white relative text-lg sm:order-0">
                 <h1 className="font-bold italic text-5xl">whoami</h1>
                 <div className="mt-3 space-y-3">
                     <div>
@@ -35,8 +35,8 @@ export const HeadSection = ({ isVisibleCallback }: { isVisibleCallback: () => vo
                     </div>
                 </div>
             </div>
-            <div className="grid place-items-center overflow-hidden pr-5">
-                <img className="w-3/4 h-3/4 md:(h-full w-full) object-fit" src="undraw_feeling_proud.svg" />
+            <div className="grid place-items-center overflow-hidden">
+                <img className="h-full w-full object-fit" src="undraw_feeling_proud.svg" />
             </div>
         </div>
 
