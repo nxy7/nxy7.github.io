@@ -13,7 +13,7 @@ export const projects: Project[] = [
     },
     {
         title: "StockBuddy.pl",
-        description: "Website that makes following Polish Stock Market (GPW) data easier than ever. Unlike other websites StockBuddy displays data for long\
+        description: "Web app that makes following Polish Stock Market (GPW) data easier than ever. Unlike other websites StockBuddy displays data for long\
             timeframes in form of easily readable charts. Other than that the website has some features making stock valuation easier.\
         ",
         liveLink: "https://stockbuddy.pl",
@@ -28,9 +28,10 @@ export const projects: Project[] = [
     },
     {
         title: "Streampai.gg",
-        description: "Web service dedicated for online broadcasters. Allows for receiving donations and showing notifications on stream. Integrates with\
-        Youtube, Twitch and more.\
-    ",
+        description: `Web service dedicated for online broadcasters. Allows receiving donations and showing notifications on stream. Integrates with Youtube, Twitch and more.
+        Unlike other simmilar projects streampai merges notification streams from various sources and allows showing them within single component. There are many features that I'd love to implement into this project like custom notifications made by users (possibly using webassembly) and restreaming capibility.
+        Definitely the most ambitious project on the list, consisting of many microservices and hosted using kubernetes cluster. Right now it is not yet available publicly, but most of the underlying work is already done. What's left is polishing the way the app looks and it can go live.
+    `,
         technologies: [
             technologies.get("ts"),
             technologies.get("svelte"),

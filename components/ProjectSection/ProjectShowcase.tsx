@@ -10,7 +10,7 @@ export default function ProjectShowcase({ project }: { project: Project }) {
                     <div className="font-semibold mb-1">
                         Project description:
                     </div>
-                    <div>
+                    <div className="whitespace-pre-line">
                         {project.description}
                     </div>
                 </div>
