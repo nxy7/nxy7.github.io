@@ -18,7 +18,7 @@ export default function ProjectShowcase({ project }: { project: Project }) {
                     <div className="font-semibold mb-1">
                         Technologies used:
                     </div>
-                    <div className="flex space-x-3">
+                    <div className="flex gap-3 flex-wrap justify-center">
                         {project.technologies.map((tech, ind) => {
                             return <>
                                 <img key={ind} src={tech.image} alt="" className="h-10" />
