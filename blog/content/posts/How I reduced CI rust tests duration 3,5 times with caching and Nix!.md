@@ -1,4 +1,8 @@
-# How I reduced CI rust tests duration 4x with caching and Nix!
+---
+title: "How I've reduced CI rust tests duration 4x with caching and Nix!"
+date: 2022-11-20T09:03:20-08:00
+draft: false
+---
 
 One of my project consists of backend (rust) split into many services and frontend made with Svelte. Sooner rather than later I found out that rust builds that we're rather quick locally took ages in CI, resulting in poor CI feedback experience and test times exceeding 15minutes. This post was made to help people struggling with simmilar issues.
 
