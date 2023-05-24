@@ -23,6 +23,14 @@ export const HeadSection = ({ isVisibleCallback }: { isVisibleCallback: () => vo
               Read More
             </a>
             <a
+              href="https://blog.noxy.site"
+              onClick={() => {
+                console.log("z")
+              }}
+              className={`${styles.neonButton} flex items-center font-bold bg-[#FFFFFF22] duration-200 text-white rounded-sm border-0 text-xl py-4 px-7 border-white hover:(bg-[#FFFFFF55]) cursor-pointer`}>
+              Blog
+            </a>
+            <a
               href="https://github.com/nxy7"
               target="_blank"
               onClick={() => {

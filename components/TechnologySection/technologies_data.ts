@@ -8,9 +8,9 @@ export let technologies: Map<string, Technology> = new Map([
     ["kubernetes", { name: "Kubernetes", image: "kubernetes.png" }],
     ["react", { name: "React", image: "react.png" }],
     ["svelte", { name: "Svelte", image: "svelte.png" }],
+    ["redis", { name: "Redis", image: "redis.png" }],
     ["vue", { name: "Vue", image: "vue.png" }],
     ["pgsql", { name: "Postgres", image: "pglogo.png" }],
-    ["kafka", { name: "Postgres", image: "kafka.png" }],
     ["minio", { name: "Postgres", image: "minio.png" }],
     ["nix", { name: "Nix", image: "nix_logo.svg" }],
 ])

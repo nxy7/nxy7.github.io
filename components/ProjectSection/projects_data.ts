@@ -39,7 +39,7 @@ export const projects: Project[] = [
             technologies.get("pgsql"),
             technologies.get("docker"),
             technologies.get("nix"),
-            technologies.get("kafka"),
+            technologies.get("redis"),
             technologies.get("minio"),
             technologies.get("kubernetes"),
         ], backgroundImg: "streampai.png"

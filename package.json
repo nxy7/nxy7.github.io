@@ -15,6 +15,7 @@
   "devDependencies": {
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
+    "@types/react-dom": "^18.2.4",
     "@unocss/preset-uno": "^0.50.6",
     "@unocss/transformer-variant-group": "^0.50.6",
     "@unocss/webpack": "^0.50.6",
