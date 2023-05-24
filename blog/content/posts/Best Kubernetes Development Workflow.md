@@ -1,6 +1,6 @@
 ---
 title: "The Best Kubernetes Development Workflow"
-date: 2022-11-20T09:03:20-08:00
+date: 2023-05-20T09:03:20-08:00
 draft: false
 ---
 At the start I want to point out that all opinions in this piece are just that - opinions. I've tried multiple workflows and all I want to do in this
