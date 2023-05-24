@@ -47,7 +47,6 @@ Now comes my favorite soltion - rerouting traffic from k8s to local machine. Ver
 development and production while still retaining great developer experience.
 
 ## What setup I've landed on
-If you've read everything up to this point it's probably not a shock that I've chosen using Telepresence, but I'm also using one more tool from this article - Devspace. Although they're both trying to solve the same problem and I like telepresence approach more, devspace is still great tool for managing kubernetes projects. It allows for declarative configuration and is flexible enough so that you can make it use telepresence underneath. I've created custom devspace pipelines that call 'telepresence' CLI instead of using native Devspace dev methods. You could use any tool or even script to do that, but I appriciate standarized way of doing things and
-Devspace provides just that. In the future I might write more practical follow up with configuration examples.
+If you've read everything up to this point it's probably not a shock that I've chosen using Telepresence. As telepresence commands can get repetitive rather quickly I've scripts that setup my project in 'prod' mode and then scripts that turn services in development mode (start telepresence -> run service -> stop telepresence when service is stopped). I might write followup with exact configuration I'm using in the future.
 
 Thanks for reading this article, I hope that someone found it useful :) Have a great day everyone.
