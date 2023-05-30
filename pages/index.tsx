@@ -15,6 +15,14 @@ export default function Home() {
 			<Head>
 				<title>Dawid Danieluk Portfolio Website</title>
 				<link rel="icon" href="/favicon.ico" />
+				<script async src="https://www.googletagmanager.com/gtag/js?id=G-D4BXHY930J"></script>
+				<script>
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+
+					gtag('config', 'G-D4BXHY930J');
+				</script>
 			</Head>
 
 			{/* header visible when scrolling down */}
