@@ -23,7 +23,7 @@ export const HeadSection = ({ isVisibleCallback }: { isVisibleCallback: () => vo
               Read More
             </a>
             <a
-              href="https://blog.noxy.site"
+              href="/personal_blog"
               onClick={() => {
                 console.log("z")
               }}
