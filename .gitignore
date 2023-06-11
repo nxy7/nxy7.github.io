@@ -1,4 +1,5 @@
 # Logs
+.direnv
 logs
 *.log
 npm-debug.log*

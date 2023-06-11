@@ -4,15 +4,15 @@ import styles from '../styles/Home.module.css'
 export const HeadSection = ({ isVisibleCallback }: { isVisibleCallback: () => void }) => {
   return <section id="main" className="grid place-items-center">
     {/* <Navigation></Navigation> */}
-    <div className="w-full min-h-screen grid gap-7 p-3 lg:(grid-cols-2) place-items-center">
-      <div className="max-w-140 text-white relative text-lg sm:order-0">
+    <div className="w-full min-h-screen grid gap-7 p-3 mt-10 lg:(mt-0 grid-cols-2) place-items-center">
+      <div className="max-w-140 text-white relative text-lg min-h-90">
         <h1 className="font-bold italic text-5xl">whoami</h1>
         <div className="mt-3 space-y-3">
           <div>
             Developer passionate about new technologies. I value reliable software, so I tend to gravitate towards
             type safe languages/tech stacks, reproducible environments (nix) and test critical parts of my software.
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
 
             <a
               href="#techstack"
