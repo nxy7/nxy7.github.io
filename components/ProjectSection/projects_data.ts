@@ -12,6 +12,14 @@ export const projects: Project[] = [
         backgroundImg: "mediujemy.jpg"
     },
     {
+        title: "Chat APP",
+        description: "Live chat application",
+        liveLink: "https://chat-app.nxyt.pl",
+        sourceCode: "http://github.com/nxy7/go-chat",
+        technologies: [technologies.get("go"), technologies.get("redis"), technologies.get("kubernetes"), technologies.get("mongodb"), technologies.get("vue")],
+        backgroundImg: "chatapp.png"
+    },
+    {
         title: "StockBuddy.pl",
         description: "Web app that makes following Polish Stock Market (GPW) data easier than ever. Unlike other websites StockBuddy displays data for long\
             timeframes in form of easily readable charts. Other than that the website has some features making stock valuation easier.\

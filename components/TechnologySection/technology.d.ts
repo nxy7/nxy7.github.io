@@ -1,7 +1,7 @@
 export type Technology = {
-    name: string
+    name: TechName
     image: string
     description?: string
 }
 
-// type tech_name = "rust" | "go" | "typescript" | "docker" | "nix" | "nushell" | "kubernetes"
+type TechName = "Rust" | "Golang" | "Typescript" | "Docker" | "Nix" | "Nushell" | "Kubernetes" | "Vue" | "MongoDB" | "Redis" | "React" | "Svelte" | "Postgres" | "Minio"
