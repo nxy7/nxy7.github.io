@@ -6,45 +6,46 @@ import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
 import { TechStackSection } from "../components/TechnologySection/TechStackSection";
 import { ProjectsSection } from "../components/ProjectSection/ProjectSection";
+import CertificationSection from "../components/CertificationSection";
 
 export default function Home() {
-	const [activeSlide, setActiveSlide] = useState(0)
+  const [activeSlide, setActiveSlide] = useState(0)
 
-	return (
-		<>
-			<Head>
-				<title>Dawid Danieluk Portfolio Website</title>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
+  return (
+    <>
+      <Head>
+        <title>Dawid Danieluk Portfolio Website</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-			{/* header visible when scrolling down */}
-			{/* <Header activeEl={activeSlide}></Header> */}
+      {/* header visible when scrolling down */}
+      {/* <Header activeEl={activeSlide}></Header> */}
 
-			<main className="bg-[#114B5F] text-white">
+      <main className="bg-slate-800 text-white">
 
-				<HeadSection isVisibleCallback={() => {
-					setActiveSlide(0)
-				}}></HeadSection>
+        <HeadSection isVisibleCallback={() => {
+          setActiveSlide(0)
+        }}></HeadSection>
 
-				<div className="flex flex-col gap-10 snap-proximity snap-y">
-					<TechStackSection isVisibleCallback={() => {
-						setActiveSlide(1)
-					}}></TechStackSection>
+        <div className="flex flex-col gap-15 snap-proximity snap-y">
+          <TechStackSection isVisibleCallback={() => {
+            setActiveSlide(1)
+          }}></TechStackSection>
 
-					<ProjectsSection isVisibleCallback={() => {
-						setActiveSlide(2)
-					}}>
-						<div>test1</div>
-						<div>test2</div>
-						<div>test3</div>
-						<div>test4</div>
+          <ProjectsSection isVisibleCallback={() => {
+            setActiveSlide(2)
+          }}>
 
-					</ProjectsSection>
-					<ContactSection></ContactSection>
-				</div>
-				<Footer></Footer>
-			</main>
-			<style jsx>{`
+          </ProjectsSection>
+
+          <CertificationSection></CertificationSection>
+
+
+          <ContactSection></ContactSection>
+        </div>
+        <Footer></Footer>
+      </main>
+      <style jsx>{`
         /* width */
 ::-webkit-scrollbar {
   width: 4px;
@@ -91,7 +92,7 @@ export default function Home() {
         }
       `}</style>
 
-			<style jsx global>{`
+      <style jsx global>{`
         html,
         body, main, #__next{
           scroll-behavior: smooth;
@@ -106,8 +107,8 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
-		</>
-	);
+    </>
+  );
 }
 
 
@@ -115,19 +116,19 @@ export default function Home() {
 
 
 type FrontButtonProps = {
-	href: string
-	children: any
+  href: string
+  children: any
 }
 export function FrontButton(props: FrontButtonProps) {
-	if (props.href) return (
-		<a href={props.href} className={
-			`px-8 py-3 border-2 border-white rounded-sm duration-200`
-			+ ` hover:bg-[#FFFFFF19]`
-			+ ` font-bold text-white`
-		}>{props.children}</a>
-	)
-	return (
-		<button>{props.children}</button>
-	)
+  if (props.href) return (
+    <a href={props.href} className={
+      `px-8 py-3 border-2 border-white rounded-sm duration-200`
+      + ` hover:bg-[#FFFFFF19]`
+      + ` font-bold text-white`
+    }>{props.children}</a>
+  )
+  return (
+    <button>{props.children}</button>
+  )
 }
 
